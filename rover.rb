@@ -31,8 +31,15 @@ class Rover
   end
 
   def read_instructions(user_input)
-
-
+    user_input.each_char do |character|
+      if character == "L"
+        turn("L")
+      elsif character == "R"
+        turn("R")
+      else
+        move
+      end
+    end
   end
 
   def move
