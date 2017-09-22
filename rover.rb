@@ -18,7 +18,20 @@ class Rover
     @direction = direction
   end
 
+  def x_position
+    @x_position
+  end
+
+  def y_position
+    @y_position
+  end
+
+  def direction
+    @direction
+  end
+
   def read_instructions(user_input)
+
 
   end
 
@@ -61,3 +74,9 @@ class Rover
 end
 
 rover_1 = Rover.new(1, 4, "E")
+
+puts "x: #{rover_1.x_position}, y: #{rover_1.y_position}, direction: #{rover_1.direction}"
+rover_1.move
+puts "x: #{rover_1.x_position}, y: #{rover_1.y_position}, direction: #{rover_1.direction}"
+rover_1.turn("R")
+puts "x: #{rover_1.x_position}, y: #{rover_1.y_position}, direction: #{rover_1.direction}"
