@@ -87,3 +87,13 @@ rover_1.move
 puts "x: #{rover_1.x_position}, y: #{rover_1.y_position}, direction: #{rover_1.direction}"
 rover_1.turn("R")
 puts "x: #{rover_1.x_position}, y: #{rover_1.y_position}, direction: #{rover_1.direction}"
+
+puts "Please provide the starting x position: "
+x_position = gets.to_i
+puts "Please provide the starting y position: "
+y_position = gets.to_i
+puts "Please provier the starting direction (N/E/S/W): "
+direction = gets.chomp
+
+rover_2 = Rover.new(x_position, y_position, direction)
+puts rover_2.direction
