@@ -89,9 +89,16 @@ direction = gets.chomp
 
 rover_1 = Rover.new(x_position, y_position, direction)
 
-puts "Please enter in a series of move and turn instructions: "
-user_input = gets.chomp
+move_rover = "y"
 
-rover_1.read_instructions(user_input)
+while move_rover == "y"
+  puts "Please enter in a series of move and turn instructions: "
+  user_input = gets.chomp
 
-puts "Rover's new position is #{rover_1.x_position} #{rover_1.y_position} #{rover_1.direction}"
+  rover_1.read_instructions(user_input)
+
+  puts "Rover's new position is #{rover_1.x_position} #{rover_1.y_position} #{rover_1.direction}"
+
+  puts "Do you want to change the rover's position again? (y/n)"
+  move_rover = gets.chomp
+end
