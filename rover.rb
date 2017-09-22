@@ -80,20 +80,18 @@ class Rover
 
 end
 
-rover_1 = Rover.new(1, 4, "E")
-
-puts "x: #{rover_1.x_position}, y: #{rover_1.y_position}, direction: #{rover_1.direction}"
-rover_1.move
-puts "x: #{rover_1.x_position}, y: #{rover_1.y_position}, direction: #{rover_1.direction}"
-rover_1.turn("R")
-puts "x: #{rover_1.x_position}, y: #{rover_1.y_position}, direction: #{rover_1.direction}"
-
 puts "Please provide the starting x position: "
 x_position = gets.to_i
 puts "Please provide the starting y position: "
 y_position = gets.to_i
-puts "Please provier the starting direction (N/E/S/W): "
+puts "Please provide the starting direction (N/E/S/W): "
 direction = gets.chomp
 
-rover_2 = Rover.new(x_position, y_position, direction)
-puts rover_2.direction
+rover_1 = Rover.new(x_position, y_position, direction)
+
+puts "Please enter in a series of move and turn instructions: "
+user_input = gets.chomp
+
+rover_1.read_instructions(user_input)
+
+puts "Rover's new position is #{rover_1.x_position} #{rover_1.y_position} #{rover_1.direction}"
